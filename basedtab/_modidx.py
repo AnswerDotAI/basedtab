@@ -6,5 +6,10 @@ d = { 'settings': { 'branch': 'main',
                 'git_url': 'https://github.com/AnswerDotAI/BasedTab',
                 'lib_path': 'basedtab'},
   'syms': { 'basedtab.core': { 'basedtab.core.Array.read_csv': ('core.html#array.read_csv', 'basedtab/core.py'),
+                               'basedtab.core.Array.save_csv': ('core.html#array.save_csv', 'basedtab/core.py'),
                                'basedtab.core.BFrame': ('core.html#bframe', 'basedtab/core.py'),
-                               'basedtab.core.BFrame.__init__': ('core.html#bframe.__init__', 'basedtab/core.py')}}}
+                               'basedtab.core.BFrame.__init__': ('core.html#bframe.__init__', 'basedtab/core.py'),
+                               'basedtab.core.BFrame._classify': ('core.html#bframe._classify', 'basedtab/core.py'),
+                               'basedtab.core.BFrame.head': ('core.html#bframe.head', 'basedtab/core.py'),
+                               'basedtab.core.BFrame.tail': ('core.html#bframe.tail', 'basedtab/core.py'),
+                               'basedtab.core.BFrame.take': ('core.html#bframe.take', 'basedtab/core.py')}}}

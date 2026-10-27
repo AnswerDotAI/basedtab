@@ -30,7 +30,7 @@ $ pip install BasedTab
 ``` python
 from basedtab.core import *
 bf = BFrame.read_csv("../../data/toy.csv")
-bf.df.head(3)
+bf.head(3).df
 ```
 
 <div>

@@ -15,7 +15,25 @@ from math import inf
 # %% ../nbs/00_core.ipynb #4da1dadf
 class BFrame(Array):
     def __init__(self, arr): super().__init__(arr)
+    def _classify(self): pass # TODO Update BasedPL to simplify subclassing of Array.
+    # TODO Update BasedPL result_ to allow simple method chaining in BFrame
 
 # %% ../nbs/00_core.ipynb #5254faf4
 @patch(cls_method=True)
 def read_csv(cls:Array, path, **kwargs): return cls(csv(nget(path, **kwargs)))
+
+# %% ../nbs/00_core.ipynb #d4e90118
+@patch
+def save_csv(self:Array, path): return nput(path, csv.undo(self))
+
+# %% ../nbs/00_core.ipynb #4bad4ac0
+@patch
+def take(self:BFrame, n:int): return take.each(n, self)
+
+# %% ../nbs/00_core.ipynb #6fdd278f
+@patch
+def head(self:BFrame, n=5): return self.take(n)
+
+# %% ../nbs/00_core.ipynb #69fb297b
+@patch
+def tail(self:BFrame, n=5): return self.take(-n)
