@@ -5,4 +5,6 @@ d = { 'settings': { 'branch': 'main',
                 'doc_host': 'https://AnswerDotAI.github.io',
                 'git_url': 'https://github.com/AnswerDotAI/BasedTab',
                 'lib_path': 'BasedTab'},
-  'syms': {'BasedTab.core': {'BasedTab.core.foo': ('core.html#foo', 'BasedTab/core.py')}}}
+  'syms': { 'BasedTab.core': { 'BasedTab.core.Array.read_csv': ('core.html#array.read_csv', 'BasedTab/core.py'),
+                               'BasedTab.core.BFrame': ('core.html#bframe', 'BasedTab/core.py'),
+                               'BasedTab.core.BFrame.__init__': ('core.html#bframe.__init__', 'BasedTab/core.py')}}}
