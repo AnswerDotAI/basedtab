@@ -32,6 +32,7 @@ name = "basedtab"
 source = { editable = "." }
 dependencies = [
     { name = "basedpl" },
+    { name = "pandas" },
 ]
 
 [package.dev-dependencies]
@@ -40,7 +41,10 @@ dev = [
 ]
 
 [package.metadata]
-requires-dist = [{ name = "basedpl", specifier = ">=0.1.51" }]
+requires-dist = [
+    { name = "basedpl", specifier = ">=0.1.51" },
+    { name = "pandas", specifier = ">=3.1.0" },
+]
 
 [package.metadata.requires-dev]
 dev = [{ name = "pandas", specifier = ">=3.1.0" }]

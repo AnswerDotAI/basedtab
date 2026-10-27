@@ -17,6 +17,7 @@ classifiers = [
 ]
 dependencies = [
     "basedpl>=0.1.51",
+    "pandas>=3.1.0",
 ]
 
 [project.urls]
@@ -35,6 +36,3 @@ include = ["basedtab"]
 [tool.nbdev]
 
 [dependency-groups]
-dev = [
-    "pandas>=3.1.0",
-]
