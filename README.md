@@ -36,7 +36,10 @@ $ pip install basedtab
 
 ``` python
 from basedtab.core import *
-bf = BFrame.read_csv("../../data/toy.csv")
+from nbdev.config import get_config
+
+data_path = str(get_config().config_path/'data/toy.csv')
+bf = BFrame.read_csv(data_path)
 bf.head(3).df
 ```
 

@@ -220,4 +220,5 @@ __marimo__/
 .streamlit/secrets.tom
 
 # nbdev
-_proc/
+_proc
+index_files/
