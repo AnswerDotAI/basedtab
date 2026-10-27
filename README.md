@@ -7,22 +7,29 @@
 
 ### Installation
 
-Install latest from the GitHub [repository](https://github.com/AnswerDotAI/BasedTab):
+For development:
 
-``` sh
-$ pip install git+https://github.com/AnswerDotAI/BasedTab.git
+``` bash
+git clone https://github.com/AnswerDotAI/basedtab.git
+pip install -e .
 ```
 
-or from [conda](https://anaconda.org/AnswerDotAI/BasedTab)
+Install latest from the GitHub [repository](https://github.com/AnswerDotAI/basedtab):
 
 ``` sh
-$ conda install -c AnswerDotAI BasedTab
+$ pip install git+https://github.com/AnswerDotAI/basedtab.git
 ```
 
-or from [pypi](https://pypi.org/project/BasedTab/)
+or from [conda](https://anaconda.org/AnswerDotAI/basedtab)
 
 ``` sh
-$ pip install BasedTab
+$ conda install -c AnswerDotAI basedtab
+```
+
+or from [pypi](https://pypi.org/project/basedtab)
+
+``` sh
+$ pip install basedtab
 ```
 
 ## How to use
@@ -53,3 +60,58 @@ bf.head(3).df
 | 2   | 3      | Dallas | Male   | 42  | 52483.0 | No      |
 
 </div>
+
+``` python
+from basedpl import add, tally, square
+MEAN = add.reduce_first / tally
+bf.groupby("City", "Income", mean=MEAN).df.astype(int)
+```
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&#10;    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+&#10;    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+
+|     |      | Income |
+|-----|------|--------|
+| 0   | mean | 45252  |
+| 1   | mean | 96857  |
+| 2   | mean | 95264  |
+| 3   | mean | 135078 |
+| 4   | mean | 91554  |
+| 5   | mean | 70991  |
+| 6   | mean | 100756 |
+| 7   | mean | 90277  |
+
+</div>
+
+``` python
+RMSE = MEAN.under(square)
+bf.head(100).groupby("Gender", ["Age", "Income"], mean=MEAN, rmse=RMSE)
+```
+
+    ┌→───────────────────────────┐
+    ↓0⌷                          │
+    ↓             Age      Income│
+    │mean 44.57407407 48301.42593│
+    │rmse 45.66970793 49632.10639│
+    │                            │
+    │1⌷                          │
+    │             Age      Income│
+    │mean 45.30434783 39739.36957│
+    │rmse 46.73468128 40738.65853│
+    └~───────────────────────────┘
+
+``` python
+bf["Income"].hist()
+```
+
+![](index_files/figure-commonmark/cell-5-output-1.svg)

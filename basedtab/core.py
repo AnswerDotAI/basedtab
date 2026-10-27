@@ -13,18 +13,19 @@ from basedpl import *
 from math import inf
 
 # %% ../nbs/00_core.ipynb #4da1dadf
-class BFrame(Array):
-    def __init__(self, arr): super().__init__(arr)
-    def _classify(self): pass # TODO Update BasedPL to simplify subclassing of Array.
-    # TODO Update BasedPL result_ to allow simple method chaining in BFrame
+@patch
+def _classify(self:Array):
+    self.__class__ = FunctionArray if self._inner.holds_functions else BFrame
+
+class BFrame(Array): __slots__ = ()
 
 # %% ../nbs/00_core.ipynb #5254faf4
 @patch(cls_method=True)
-def read_csv(cls:Array, path, **kwargs): return cls(csv(nget(path, **kwargs)))
+def read_csv(cls:BFrame, path, **kwargs): return cls(csv(nget(path, **kwargs)))
 
 # %% ../nbs/00_core.ipynb #d4e90118
 @patch
-def save_csv(self:Array, path): return nput(path, csv.undo(self))
+def save_csv(self:BFrame, path): return nput(path, csv.undo(self))
 
 # %% ../nbs/00_core.ipynb #4bad4ac0
 @patch
@@ -37,3 +38,32 @@ def head(self:BFrame, n=5): return self.take(n)
 # %% ../nbs/00_core.ipynb #69fb297b
 @patch
 def tail(self:BFrame, n=5): return self.take(-n)
+
+# %% ../nbs/00_core.ipynb #9750cf0c
+@patch
+def group_fn(self:BFrame, aggs): 
+    fanout = fn('{f←↑⍺⋄f ⍵}').rank([0, inf])
+    return right.after(fanout.left(aggs)).key
+
+# %% ../nbs/00_core.ipynb #e7805c92
+@patch
+def groupby(self:BFrame, by, cols, **aggs):
+    def matrix(cols): return transpose(mix(self[listify(cols)]))
+    return self.group_fn(aggs)(matrix(by), matrix(cols))
+
+# %% ../nbs/00_core.ipynb #590c0b01
+@patch
+def plot(self:BFrame, **kwargs): return plot(self, **kwargs)
+
+# %% ../nbs/00_core.ipynb #5ac2a078
+@patch
+def hist_input(self:BFrame, n:int):
+    lo,hi = Array([minimum.reduce_first, maximum.reduce_first])(self)
+    w = (hi-lo)/n
+    starts = lo+w*iota(n)
+    return Array(dict(x=starts+w/2,
+        count=take(n, where.undo(interval_index(starts[1:], self)))))
+
+# %% ../nbs/00_core.ipynb #05e757b2
+@patch
+def hist(self:BFrame, n=50, **kwargs): return plot(self.hist_input(n), mark="bar", **kwargs)
