@@ -1,0 +1,76 @@
+version = 1
+revision = 5
+requires-python = ">=3.10"
+resolution-markers = [
+    "python_full_version >= '3.11'",
+    "python_full_version < '3.11'",
+]
+
+[[package]]
+name = "basedpl"
+version = "0.1.51"
+source = { registry = "https://pypi.org/simple" }
+resolution-markers = [
+    "python_full_version < '3.11'",
+]
+dependencies = [
+    { name = "fastcore" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/f6/13/70f00bb1c542ac0b2df2ee5eb0cbee0cab5a3b0b760640284aec096d7f39/basedpl-0.1.51.tar.gz", hash = "sha256:75e32dab1a9c3c9248da0aa56c89afb7ea20682ce14e0ac1fa018aeb713b306b", size = 2398055, upload-time = "2026-10-15T19:58:51.112Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/4a/21/997a3bb9086742c76c77a8329c83add33b92d4e33ae77ee97725e0480064/basedpl-0.1.51-cp310-cp310-macosx_15_0_arm64.whl", hash = "sha256:bbce68a895043b3691f956b9090e28a419d0173bd9f75a251a44424b0ce8fea9", size = 12231725, upload-time = "2026-10-15T19:58:22.304Z" },
+    { url = "https://files.pythonhosted.org/packages/44/77/4e11db538345a64e0e14434da899fd47d1571ed2babeab5a27c3a738360e/basedpl-0.1.51-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:b3901bf00e8b55085d4405e07862d6e0ac07e3409f1555be3bd23448bf97db98", size = 13179759, upload-time = "2026-10-15T19:58:24.976Z" },
+    { url = "https://files.pythonhosted.org/packages/10/16/3d11dd1aa5800759418c15932bb176df82d21a043c6e1354a3dd6a6877c1/basedpl-0.1.51-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:d0fb461927d6dce03fdbc6567e1f7ee1f7eae3253ce5ce5af322c8f4b84af8fa", size = 15218326, upload-time = "2026-10-15T19:58:27.496Z" },
+    { url = "https://files.pythonhosted.org/packages/f8/c2/024d46dbf396685fec4f04ec5baf4712197c8a3d8ab4be6f040f92ada47a/basedpl-0.1.51-cp311-cp311-macosx_15_0_arm64.whl", hash = "sha256:e7f2895687c62e0672dea2b7dd54babb5dac168cd3d2956fa5ad2fb5de3d2fa6", size = 12231899, upload-time = "2026-10-15T19:58:29.733Z" },
+    { url = "https://files.pythonhosted.org/packages/6c/26/0c6ee96a62ebcf6b6494b206f18be024cdccb3807996addc258e4a80f042/basedpl-0.1.51-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:597f2b0dd96295dbcbabe9bffe9a118011a7288bc6fab98c81d2e696d21ebbf9", size = 13179559, upload-time = "2026-10-15T19:58:32.035Z" },
+    { url = "https://files.pythonhosted.org/packages/21/06/bfe9407624b86de28991e7d7b9c18c915444b2be70d4ee2fd4ca146f586f/basedpl-0.1.51-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:34b25f840e88ad6f46102626d5f5005fa1908cece767e5952d22167c09393046", size = 15217707, upload-time = "2026-10-15T19:58:34.464Z" },
+    { url = "https://files.pythonhosted.org/packages/d4/0c/a914f9deea54e7c568cb851c0c0c08981ceb912377bb48db3bfe325cf700/basedpl-0.1.51-cp312-cp312-macosx_15_0_arm64.whl", hash = "sha256:a52e51dd37eff0e00696a2171d3123aeb3eaffd67727b60d42dc961073fbdfb5", size = 12229659, upload-time = "2026-10-15T19:58:36.627Z" },
+    { url = "https://files.pythonhosted.org/packages/10/71/40492f0b46c7c78b199c1cdf644b2cfeb04cca9a31234a5e3b101559a268/basedpl-0.1.51-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:398e7af1e1e6cc6e0bac64b171aee96042408ebb9a3ef78849bb040897c59330", size = 13174992, upload-time = "2026-10-15T19:58:38.777Z" },
+    { url = "https://files.pythonhosted.org/packages/0d/f3/0efee2d9f8bbe924ae6d49b3c09b054936e65a22d6f1eec0510162513309/basedpl-0.1.51-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:9f8bff4a5b11131bf9963253fb72d65994a16ea88e474733ca8694b62029e089", size = 15215147, upload-time = "2026-10-15T19:58:41.135Z" },
+    { url = "https://files.pythonhosted.org/packages/01/d2/53a2a1cfc054d57b3a9144a76eb0da3da73bf3501e3be09ef1ae5e0e5d26/basedpl-0.1.51-cp313-cp313-macosx_15_0_arm64.whl", hash = "sha256:280cf81d80c163c1cb21cd81d93c928745422079b9abd6f72937a45fd379573b", size = 12228108, upload-time = "2026-10-15T19:58:43.597Z" },
+    { url = "https://files.pythonhosted.org/packages/11/50/24849f721f41f472e0538a013b77fa06f7f213f8df95a5219c37f279dab9/basedpl-0.1.51-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:b9746d302d1042ef89007643c098db0615d83a9fdf762f6ee13eadd025e4ed06", size = 13175411, upload-time = "2026-10-15T19:58:46.017Z" },
+    { url = "https://files.pythonhosted.org/packages/eb/04/184ef0189279d938784388784ba52d59f5fbb3f0b6bed7bdad4d6a1f1749/basedpl-0.1.51-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:f343197879c1d5a5e7a080ff8034314fc51ec2696a2536f24825fdbb30aa71c6", size = 15214247, upload-time = "2026-10-15T19:58:48.756Z" },
+]
+
+[[package]]
+name = "basedpl"
+version = "0.1.75"
+source = { registry = "https://pypi.org/simple" }
+resolution-markers = [
+    "python_full_version >= '3.11'",
+]
+dependencies = [
+    { name = "fastcore" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/9d/40/b4ba67454ba55a906f8858ec794d388a50ce681aaea65b928df27c5e4bb1/basedpl-0.1.75.tar.gz", hash = "sha256:8049c5bb3b80446c59a072221c075d8c30a3b32d59fcad77da69a7f67281dc5a", size = 2832904, upload-time = "2026-10-25T07:09:31.135Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/ac/d3/7b993fa5312e5ed8050b428c334b25b83ca11bb210d08297c7717a27f391/basedpl-0.1.75-cp311-cp311-macosx_15_0_arm64.whl", hash = "sha256:0de211462e6e757b870122aa82c145f5a9627eb54cdd6314bff26a6a01448f38", size = 16238646, upload-time = "2026-10-25T07:09:06.868Z" },
+    { url = "https://files.pythonhosted.org/packages/bc/b4/f52a0721e8ff696702d38e1df83c7ea2bb5ef4ef6d1cf27948ec1ca5668c/basedpl-0.1.75-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:213561b96b4d05e323e6bd1e76a681a42c9ad77e829ef95680b57e1906bfcf69", size = 16833185, upload-time = "2026-10-25T07:09:10.36Z" },
+    { url = "https://files.pythonhosted.org/packages/a2/b8/f9c637f834c87129664d88185965514fd925072d20a9a737e7d43586180f/basedpl-0.1.75-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:2d7301d45cb33aa18a67e5c5d3350d4d59c7af5a7b9de653cbb1ccf91f6b603c", size = 21282031, upload-time = "2026-10-25T07:09:13.268Z" },
+    { url = "https://files.pythonhosted.org/packages/b7/8c/88a5c5155e57f85ae14f2041a6e9345105a1ae31299dffc91e2f72025ed4/basedpl-0.1.75-cp312-cp312-macosx_15_0_arm64.whl", hash = "sha256:cc942bf947a51a8227b4967c58728c810405e76c536aefe00ca3cd400e49ba5f", size = 16231300, upload-time = "2026-10-25T07:09:15.704Z" },
+    { url = "https://files.pythonhosted.org/packages/1f/ba/f134ebb45a0c62d2a56d3dc0c093442227bac9ae293aba4f3cd9917a6eb1/basedpl-0.1.75-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:7c33366e40463e49fb22738fb1b6d7cd34a605cdb32c727ae58858a7d81aca51", size = 16826269, upload-time = "2026-10-25T07:09:18.286Z" },
+    { url = "https://files.pythonhosted.org/packages/fe/9c/25f98882c9156668689a64ef47b5facc32dee6ab7c2238cf50f8383bc539/basedpl-0.1.75-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:f945b29154a5b4f20a7577b4f49c6ba8e9a1284ad1a06d02503cb549ccf0b49b", size = 21279233, upload-time = "2026-10-25T07:09:20.816Z" },
+    { url = "https://files.pythonhosted.org/packages/66/b4/31b645cbc0870b9db4b8a031aff3a6650cf5dec74c0a6304e4fb89492002/basedpl-0.1.75-cp313-cp313-macosx_15_0_arm64.whl", hash = "sha256:6d432e9ff9e1c1bb6b7eb3f35d6309e6f43819bddda4ea0e664d603df5cecc46", size = 16230606, upload-time = "2026-10-25T07:09:23.448Z" },
+    { url = "https://files.pythonhosted.org/packages/ae/d5/86c846659eaf7dbdcb213538a28bb840bbdbc1f12487eb5161f9a94ea660/basedpl-0.1.75-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:50f843d6bfca35881293d5d31d0f342c698f47da7f5860bfd454b3feac3c9f92", size = 16828049, upload-time = "2026-10-25T07:09:25.899Z" },
+    { url = "https://files.pythonhosted.org/packages/af/3c/80c3be8b73a08a6ce89a4f9e1d9c4d157922663cf9a03f8159763b0a3357/basedpl-0.1.75-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:fec6081916eb2265621bb8c009401b300f001eade548e958a4e8f178b568e77a", size = 21278937, upload-time = "2026-10-25T07:09:28.691Z" },
+]
+
+[[package]]
+name = "basedtab"
+source = { editable = "." }
+dependencies = [
+    { name = "basedpl", version = "0.1.51", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },
+    { name = "basedpl", version = "0.1.75", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11'" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "basedpl", specifier = ">=0.1.51" }]
+
+[[package]]
+name = "fastcore"
+version = "2.2.35"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/5c/19/45837ad449e435da74522340502bafeb66961baccc046df2e4b364a06076/fastcore-2.2.35.tar.gz", hash = "sha256:491e6d8527e1f0f9b5f43ec476991b7484e8254741f3143d96827fa4738ba9ec", size = 145263, upload-time = "2026-10-27T05:01:41.372Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/65/69/9de386c759a02efd21c852f26d265455f6b63613dc7ce2ad38e28d555c81/fastcore-2.2.35-py3-none-any.whl", hash = "sha256:bec75b32e7f2c78cf1c652c75f065e8e6ed94a7a92183ef11509daaf726eab00", size = 151951, upload-time = "2026-10-27T05:01:39.9Z" },
+]

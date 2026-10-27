@@ -2,7 +2,7 @@ project:
   output-dir: _docs
 
 website:
-  title: "BasedTab"
+  title: "basedtab"
   site-url: "https://AnswerDotAI.github.io/BasedTab"
   description: "Based Tabular Data"
   repo-branch: main

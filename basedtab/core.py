@@ -1,4 +1,4 @@
-"""Fill in a module description here
+"""BFrame
 
 Docs: https://AnswerDotAI.github.io/BasedTab/core.html.md"""
 
