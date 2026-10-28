@@ -14,10 +14,10 @@ from math import inf
 
 # %% ../nbs/00_core.ipynb #4da1dadf
 @patch
-def _classify(self:Array):
+def _classify(self:Array): 
     self.__class__ = FunctionArray if self._inner.holds_functions else BFrame
 
-class BFrame(Array): __slots__ = ()
+class BFrame(Array): ...
 
 # %% ../nbs/00_core.ipynb #5254faf4
 @patch(cls_method=True)
