@@ -7,29 +7,11 @@
 
 ### Installation
 
-For development:
+Not on PyPI yet. Install:
 
 ``` bash
 git clone https://github.com/AnswerDotAI/basedtab.git
 pip install -e .
-```
-
-Install latest from the GitHub [repository](https://github.com/AnswerDotAI/basedtab):
-
-``` sh
-$ pip install git+https://github.com/AnswerDotAI/basedtab.git
-```
-
-or from [conda](https://anaconda.org/AnswerDotAI/basedtab)
-
-``` sh
-$ conda install -c AnswerDotAI basedtab
-```
-
-or from [pypi](https://pypi.org/project/basedtab)
-
-``` sh
-$ pip install basedtab
 ```
 
 ## How to use
