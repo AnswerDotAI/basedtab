@@ -55,34 +55,42 @@ bf.head(3).df
 ``` python
 from basedpl import add, tally, square
 MEAN = add.reduce_first / tally
-bf.groupby("City", "Income", mean=MEAN).df.astype(int)
+bf.groupby("City", "Income", mean=MEAN)
 ```
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-&#10;    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-&#10;    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-
-|                 |      | Income |
-|-----------------|------|--------|
-| Dallas          | mean | 45252  |
-| New York City   | mean | 96857  |
-| Los Angeles     | mean | 95264  |
-| Mountain View   | mean | 135078 |
-| Boston          | mean | 91554  |
-| Washington D.C. | mean | 70991  |
-| San Diego       | mean | 100756 |
-| Austin          | mean | 90277  |
-
-</div>
+    ┌→─────────────────┐
+    ↓"Dallas"⌷         │
+    ↓          Income  │
+    │mean 45252.23119  │
+    │                  │
+    │"New York City"⌷  │
+    │          Income  │
+    │mean 96857.13139  │
+    │                  │
+    │"Los Angeles"⌷    │
+    │          Income  │
+    │mean 95264.15541  │
+    │                  │
+    │"Mountain View"⌷  │
+    │          Income  │
+    │mean 135078.4158  │
+    │                  │
+    │"Boston"⌷         │
+    │         Income   │
+    │mean 91554.5715   │
+    │                  │
+    │"Washington D.C."⌷│
+    │          Income  │
+    │mean 70991.61281  │
+    │                  │
+    │"San Diego"⌷      │
+    │          Income  │
+    │mean 100756.2092  │
+    │                  │
+    │"Austin"⌷         │
+    │          Income  │
+    │mean 90277.51342  │
+    └~─────────────────┘
 
 ``` python
 RMSE = MEAN.under(square)
@@ -115,64 +123,68 @@ ts
     └∊────────────────────────────────┘
 
 ``` python
-ts.rolling("price", size=3, edge="clamp", mean=MEAN).df
+ts.rolling("price", size=3, edge="clamp", mean=MEAN)
 ```
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-&#10;    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-&#10;    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-
-|     |      | price     |
-|-----|------|-----------|
-| 0   | mean | 4.766667  |
-| 1   | mean | 4.466667  |
-| 2   | mean | 3.466667  |
-| 3   | mean | 5.366667  |
-| 4   | mean | 10.666667 |
-| 5   | mean | 15.000000 |
-| 6   | mean | 20.000000 |
-| 7   | mean | 21.666667 |
-
-</div>
+    ┌→───────────────┐
+    ↓0⌷              │
+    ↓           price│
+    │mean 4.766666667│
+    │                │
+    │1⌷              │
+    │           price│
+    │mean 4.466666667│
+    │                │
+    │2⌷              │
+    │           price│
+    │mean 3.466666667│
+    │                │
+    │3⌷              │
+    │           price│
+    │mean 5.366666667│
+    │                │
+    │4⌷              │
+    │           price│
+    │mean 10.66666667│
+    │                │
+    │5⌷              │
+    │     price      │
+    │mean    15      │
+    │                │
+    │6⌷              │
+    │     price      │
+    │mean    20      │
+    │                │
+    │7⌷              │
+    │           price│
+    │mean 21.66666667│
+    └~───────────────┘
 
 ``` python
-ts.rolling("price", size=2, step=2, mean=MEAN, rmse=RMSE).df
+ts.rolling("price", size=2, step=2, mean=MEAN, rmse=RMSE)
 ```
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-&#10;    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-&#10;    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-
-|     |      | price     |
-|-----|------|-----------|
-| 0   | mean | 4.650000  |
-|     | rmse | 4.663153  |
-| 1   | mean | 3.050000  |
-|     | rmse | 3.225678  |
-| 2   | mean | 15.000000 |
-|     | rmse | 15.811388 |
-| 3   | mean | 20.000000 |
-|     | rmse | 20.615528 |
-
-</div>
+    ┌→───────────────┐
+    ↓0⌷              │
+    ↓           price│
+    │mean        4.65│
+    │rmse 4.663153439│
+    │                │
+    │1⌷              │
+    │           price│
+    │mean        3.05│
+    │rmse 3.225678223│
+    │                │
+    │2⌷              │
+    │          price │
+    │mean         15 │
+    │rmse 15.8113883 │
+    │                │
+    │3⌷              │
+    │           price│
+    │mean          20│
+    │rmse 20.61552813│
+    └~───────────────┘
 
 ### Plot
 
