@@ -16,7 +16,7 @@ classifiers = [
     "Programming Language :: Python :: 3 :: Only",
 ]
 dependencies = [
-    "basedpl>=0.1.51",
+    "basedpl>=0.1.78",
     "pandas>=3.1.0",
 ]
 
