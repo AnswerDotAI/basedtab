@@ -21,12 +21,10 @@ pip install -e .
 `read_csv` and `save_csv`
 
 ``` python
-from basedtab.core import *
-from nbdev.config import get_config
+from basedtab.core import BFrame
 
-data_path = str(get_config().config_path/'data/toy.csv')
-bf = BFrame.read_csv(data_path)
-bf.head(3).df
+bf = BFrame.read_csv(path)
+bf.head(2).df
 ```
 
 <div>
@@ -46,7 +44,6 @@ bf.head(3).df
 |-----|--------|--------|--------|-----|---------|---------|
 | 0   | 1      | Dallas | Male   | 41  | 40367.0 | No      |
 | 1   | 2      | Dallas | Male   | 54  | 45084.0 | No      |
-| 2   | 3      | Dallas | Male   | 42  | 52483.0 | No      |
 
 </div>
 
@@ -94,19 +91,19 @@ bf.groupby("City", "Income", mean=MEAN)
 
 ``` python
 RMSE = MEAN.under(square)
-bf.head(100).groupby("Gender", ["Age", "Income"], mean=MEAN, rmse=RMSE)
+bf.groupby("Gender", ["Age", "Income"], mean=MEAN, rmse=RMSE)
 ```
 
     ┌→───────────────────────────┐
     ↓"Male"⌷                     │
     ↓             Age      Income│
-    │mean 44.57407407 48301.42593│
-    │rmse 45.66970793 49632.10639│
+    │mean  44.9126253  95670.2472│
+    │rmse 46.37557969 98752.06754│
     │                            │
     │"Female"⌷                   │
     │             Age      Income│
-    │mean 45.30434783 39739.36957│
-    │rmse 46.73468128 40738.65853│
+    │mean 44.99776435 85660.92184│
+    │rmse 46.46704189 89097.22374│
     └~───────────────────────────┘
 
 ### Rolling
