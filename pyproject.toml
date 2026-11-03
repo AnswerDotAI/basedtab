@@ -18,6 +18,7 @@ classifiers = [
 dependencies = [
     "basedpl>=0.1.78",
     "pandas>=3.1.0",
+    "rustymath>=0.1.54",
 ]
 
 [project.urls]

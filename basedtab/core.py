@@ -10,6 +10,7 @@ __all__ = ['MEAN', 'DEV', 'VAR', 'SD', 'agg', 'group_pair', 'pair_keys', 'pair_v
 # %% ../nbs/00_core.ipynb #da4d26dd
 from fastcore.all import *
 from basedpl import *
+import rustymath as rm
 from math import inf
 
 # %% ../nbs/00_core.ipynb #4da1dadf
@@ -55,14 +56,22 @@ def moment(self:BFrame, n):
 
 
 
-# %% ../nbs/00_core.ipynb #5c65128d
-agg = fn('{(↑⍺)⍠0 ⍵}').rank([0, inf])
+# %% ../nbs/00_core.ipynb #66001314
+@patch(as_prop=True)
+def mean(self:BFrame): return self.moment(1)
+@patch(as_prop=True)
+def std(self:BFrame): return self.moment(2)
+@patch(as_prop=True)
+def skew(self:BFrame): return self.moment(3)
+@patch(as_prop=True)
+def kurt(self:BFrame): return self.moment(4)
 
 # %% ../nbs/00_core.ipynb #ef5e0b82
 @patch
 def matrix(self:BFrame, cols) -> Array: return transpose(mix(self[listify(cols)]))
 
 # %% ../nbs/00_core.ipynb #63c0bcf8
+agg = fn('{(↑⍺)⍠0 ⍵}').rank([0, inf])
 group_pair = fn('{⊂[⍺;⍵]}')
 pair_keys = fn('{⍕:↑⍵}¨')
 pair_vals = fn('⊃{↑1↓⍵}¨')
@@ -79,6 +88,11 @@ def rolling(self:BFrame, cols, size, edge="fill", step=1, fill=0, **aggs):
     return BFrame(agg.rank([inf, 2]).left(aggs)(windows(self.matrix(cols), size=size, edge=edge, step=step, fill=fill)))
 
 
+# %% ../nbs/00_core.ipynb #b6cbe44a
+@patch
+def rolling_mean(self:BFrame, cols, size, edge="fill", step=1, fill=0):
+    return BFrame(add.reduce_first.rank([inf,2])(windows(self.matrix(cols), size=size, edge=edge, step=step, fill=fill))/size)
+
 # %% ../nbs/00_core.ipynb #590c0b01
 @patch
 def plot(self:BFrame, **kwargs): return plot(self, **kwargs)
@@ -86,11 +100,10 @@ def plot(self:BFrame, **kwargs): return plot(self, **kwargs)
 # %% ../nbs/00_core.ipynb #5ac2a078
 @patch
 def hist_input(self:BFrame, n:int):
-    lo,hi = Array([minimum.reduce_first, maximum.reduce_first])(self)
-    w = (hi-lo)/n
-    starts = lo+w*iota(n)
-    return BFrame(dict(x=starts+w/2,
-        count=take(n, where.undo(interval_index(starts[1:], self)))))
+    counts, edges = rm.histogram(self, bins=n)
+    return BFrame(dict(
+        x=(edges[:-1]+edges[1:])/2,
+        count=counts))
 
 # %% ../nbs/00_core.ipynb #05e757b2
 @patch
